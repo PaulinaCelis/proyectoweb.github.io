@@ -1,0 +1,184 @@
+<html>
+  <head>
+    
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    
+
+    <script>
+      function signinfuncion()
+      {
+        alert("¿Quieres ser parte de la familia Gaia? RegÍstrate aquí");
+        
+      }
+    </script>
+<meta charset="UTF-8">
+    <title>signin</title>
+    
+   
+  </head>
+
+  <body onLoad=signinfuncion();>
+    <section class="header">
+      <nav>
+        <div class="nav-div">
+          <div class="nav-row">
+            <a href="pagprincipal.html">
+              <img class="logoInsta" src="images/logo insta.png" />
+            </a>
+            <p class="nav-text">@gaiacuarzos</p>
+          </div>
+          <div class="nav-row">
+            <a href="pagprincipal.html"><img src="images/logo.jpeg" /></a>
+            <h1 class="nav-text">Gaia</h1>
+          </div>
+        </div>
+
+        <div class="nav-links">
+          <ul>
+            <li><a href="pagprincipal.html">INICIO</a></li>
+            <li><a href="tienda.html">TIENDA</a></li>
+            <li><a href="cuarzos.html">CUARZOS</a></li>
+            <li><a href="nosotros.html">NOSOTROS</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      </div>
+      <section class="tienda">
+        <h1 class="tienda">Regístrate aquí</h1>
+        
+        <!--FORMULARIO-->
+        <div class="formulariosignin">
+       <form action="mailto:20041361@itdurango.edu.mx" method="post">
+
+<table border>
+    <tr>
+        <TD> Nombre completo: </TD>
+        <TD> <INPUT TYPE="text" NAME="nombre"></TD>
+        </tr>
+        <tr>
+        <TD> Email: </TD>
+        <TD> <INPUT TYPE="text" NAME="email"></TD>
+        </tr>
+        <tr>
+        <TD> Número de celular: </TD>
+        <TD> <INPUT TYPE="text" NAME="numerocel"></TD>
+        <tr>
+        <tr>
+        <TD> Código postal: </TD>
+        <TD> <INPUT TYPE="text" NAME="cp"></TD>
+        </tr>
+        <TD> Domicilio: </TD>
+        <TD> <INPUT TYPE="text" NAME="domicilio"></TD>
+        </tr>
+        <TD> Referencias del domicilio: </TD>
+        <TD> <INPUT TYPE="text" NAME="ref_domicilio"></TD>
+        </tr>
+        <tr>
+        <td>Contraseña: </td>
+        <td><input type="text" name="contraseña"</td>
+      </tr>
+     
+        <tr>
+        <TD><INPUT TYPE="checkbox"NAME="lista">Si, deseo recibir ofertas</TD>
+        </tr>
+    <td>
+        <p><input type="reset" value="Borrar datos">
+          <input type="submit" value="Registrarse">
+    </p>
+  </td>
+  </div>
+  <div class="captcha">
+    <div class="captcha-code">
+      <span id="captcha-text"></span>
+      <input type="text" id="captcha-input" placeholder="Ingresa el código">
+    </div>
+    <button id="refresh-captcha">Aceptar</button>
+  </div>
+    
+        
+    
+
+
+
+    
+</table>
+
+       </form>
+  
+       
+        
+               
+           
+          </div>
+          
+        </div>
+      </section>
+      <!--Contactanos-->
+  
+      <section class="contact">
+        <h2>CONTÁCTANOS</h2>
+        <a href="https://www.instagram.com/gaiacuarzos/">
+          <p>Instagram</p> </a>
+          <a href="wa.link/zu6yyg">
+          <p>Whatsapp</p></a>
+        <div class="row">
+          <div class="contact-col">
+            <h3>Durango</h3>
+            <p>Blvd. Felipe Pescador 1830, Nueva Vizcaya, 34080</p>
+          </div>
+          <div class="contact-col">
+            <h3>Ciudad de México</h3>
+            <p>Blvd. Felipe Pescador 1830, Nueva Vizcaya, 34080</p>
+          </div>
+          <div class="contact-col">
+            <h3>Monterrey</h3>
+            <p>Blvd. Felipe Pescador 1830, Nueva Vizcaya, 34080</p>
+          </div>
+        </div>
+      </section>
+  
+      </section>
+     
+      
+    </section>
+
+    <script>
+    
+        const captchaText = document.getElementById('captcha-text');
+        const refreshCaptchaBtn = document.getElementById('refresh-captcha');
+        const captchaInput = document.getElementById('captcha-input');
+        
+        // Generar un código de captcha aleatorio
+        function generateCaptcha() {
+          const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+          return Array.from({ length: 6 }, () => characters[Math.floor(Math.random() * characters.length)]).join('');
+        }
+        
+        // Actualizar el texto del captcha y limpiar el campo de entrada
+        function updateCaptcha() {
+          captchaText.innerText = generateCaptcha();
+          captchaInput.value = '';
+        }
+        
+        // Refrescar el captcha al hacer clic en el botón "Refrescar"
+        refreshCaptchaBtn.addEventListener('click', updateCaptcha);
+        
+        // Actualizar el captcha al cargar la página
+        updateCaptcha();
+        
+        // Validar el captcha al enviar el formulario
+        document.querySelector('form').addEventListener('submit', (e) => {
+          if (captchaInput.value.toLowerCase() !== captchaText.innerText.toLowerCase()) {
+            e.preventDefault();
+            alert('El código de captcha es incorrecto');
+            updateCaptcha();
+          }
+        });
+        </script>
+
+
+  </body>
+
+  <body background="images/3069193.jpg"></body>
+</html>
